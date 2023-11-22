@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<ASPNETMVCCRUD.Models.Domain.Employeee>
+
+@{
+}
+<h1>Employeees</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Salary</th>
+            <th>DOB</th>
+            <th>Department</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employeee in Model)
+        {
+            <tr>
+                <td>@employeee.Id</td>
+                <td>@employeee.Name</td>
+                <td>@employeee.Email</td>
+                <td>@employeee.Salary</td>
+                <td>@employeee.DOB.ToString("dd-mm-yyyy")</td>
+                <td>@employeee.Department</td>
+                <td><a href="Employeee/View/@employeee.Id">View</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
